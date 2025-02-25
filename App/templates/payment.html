@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Payment{% endblock title %}
+
+{% block content %}
+    <div class="container my-5">
+        <h2 class="fw-bold">Payment</h2>
+        {% if cart_items %}
+            <h3>Total Amount: Rs.{{ total_amount|floatformat:2 }}/-</h3>
+            <p>Please select a payment method:</p>
+            <div>
+                <a href="{% url 'paypal_payment' %}" class="btn btn-primary">Pay with PayPal</a>
+            </div>
+        {% else %}
+            <p>Your cart is empty.</p>
+        {% endif %}
+    </div>
+{% endblock content %}

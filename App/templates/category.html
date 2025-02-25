@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Category{% endblock title %}
+
+{% block main-content %}
+<div class="container my-5">
+    <div class="row">
+        {% for prod in product %}
+        <div class="col-md-4 mb-4">
+            <div class="card h-100 shadow-sm">
+                <a href="{% url 'product_detail' prod.id %}">
+                    <img src="{{ prod.product_image.url }}" class="card-img-top" alt="{{ prod.title }}">
+                </a>
+                <div class="card-body text-center">
+                    <h5 class="card-title">{{ prod.title }}</h5>
+                    <p class="card-text">{{ prod.description|truncatewords:30 }}</p>
+                    
+                    <div class="fw-bold text-danger">
+                        Rs. {{ prod.discounted_price }}/- 
+                        <small class="fw-light text-decoration-line-through">{{ prod.selling_price }}</small>
+                    </div>
+
+                    <!-- Buttons Section -->
+                    <div class="mt-3 d-flex justify-content-center gap-2">
+                        <a href="{% url 'product_detail' prod.id %}" class="btn btn-outline-dark px-4 py-2">
+                            <i class="fas fa-shopping-cart"></i> Add to Cart
+                        </a>
+                        <a href="{% url 'payment' %}" class="btn btn-primary px-4 py-2">
+                            <i class="fas fa-bolt"></i> Buy Now
+                        </a>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+{% endblock main-content %}
