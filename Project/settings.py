@@ -8,8 +8,15 @@ SECRET_KEY = 'EFnVA3aPd86oiDzaqxXGJBlR3YxPYEIre1EmmEFNTcEU6Wj7GIst7DUUOJUlzbIGNY
 PAYPAL_CLIENT_ID = 'AfdfHD7MO9J2YHwbCNKTwGvOJYNuk-c95LjLkvnc1l7mU1Mj2yNQMpxlfdAlia2AK9VqbTHd0V74OX6q'
 PAYPAL_CLIENT_SECRET = 'EFnVA3aPd86oiDzaqxXGJBlR3YxPYEIre1EmmEFNTcEU6Wj7GIst7DUUOJUlzbIGNY8LYvaJ_-kZNimO'
 
+# Build paths inside the project like this: BASE_DIR / 'subdir'.
+BASE_DIR = Path(__file__).resolve().parent.parent
+
 # Other settings...
+STATIC_URL = "/static/"
+STATIC_ROOT = BASE_DIR / "staticfiles"
+
 DEBUG = True
+
 ALLOWED_HOSTS = ["*","https://aesthetic-wisp-8909b8.netlify.app/"]
 
 # Add the LOGIN_URL setting
@@ -30,8 +37,10 @@ INSTALLED_APPS = [
 ]
 
 MIDDLEWARE = [
-    'django.middleware.security.SecurityMiddleware',
+    "django.middleware.security.SecurityMiddleware",
+    "whitenoise.middleware.WhiteNoiseMiddleware",
     'django.contrib.sessions.middleware.SessionMiddleware',
+
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
