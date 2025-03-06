@@ -10,7 +10,7 @@ PAYPAL_CLIENT_SECRET = 'EFnVA3aPd86oiDzaqxXGJBlR3YxPYEIre1EmmEFNTcEU6Wj7GIst7DUU
 
 # Other settings...
 DEBUG = True
-ALLOWED_HOSTS = ["*"]
+ALLOWED_HOSTS = ["*","https://aesthetic-wisp-8909b8.netlify.app/"]
 
 # Add the LOGIN_URL setting
 LOGIN_URL = '/login/'  
