@@ -75,9 +75,6 @@ DATABASES = {
     }
 }
 
-# Note: Ensure to set the following environment variables if needed:
-# export MYSQLCLIENT_CFLAGS='-I/usr/local/mysql/include'
-# export MYSQLCLIENT_LDFLAGS='-L/usr/local/mysql/lib'
 
 
 # Password validation
