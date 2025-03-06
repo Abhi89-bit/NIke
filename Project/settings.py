@@ -64,8 +64,21 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': BASE_DIR / 'db.sqlite3',
+    },
+    'mysql': {
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'your_database_name',  # Replace with your database name
+        'USER': 'your_username',        # Replace with your database username
+        'PASSWORD': 'your_password',    # Replace with your database password
+        'HOST': 'localhost',             # Or your database host
+        'PORT': '3306',                  # Default MySQL port
     }
 }
+
+# Note: Ensure to set the following environment variables if needed:
+# export MYSQLCLIENT_CFLAGS='-I/usr/local/mysql/include'
+# export MYSQLCLIENT_LDFLAGS='-L/usr/local/mysql/lib'
+
 
 # Password validation
 AUTH_PASSWORD_VALIDATORS = [
